@@ -1,28 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste articles !{% endblock %}
+{% block title %}Liste articles !
+{% endblock %}
 {% block body %}
-<h1>Articles</h1>
-{% if articles %}
-<table id="articles" class="tables table-striped">
-<thread>
-<tr> <th> Article </th> <th>Actions </th> </tr>
-</thread>
-<tbody>
-    {% for article in articles %}    
-    <tr> 
-        <td> {{ article }} </td> 
-        <td>  <a href="#" class="bnt btn_primary"> Details </a> </td>
-    </tr>
-    {% endfor %}
-    </tbody>
-    </table>
-    {% else %}
-        <p> aucun articles </p>
-    {% endif %}
-<style>
-</style>
-
-<div class="example-wrapper">
-</div>
+	<div class="container">
+		<h1>Articles</h1>
+		{% if articles %}
+			<table id="articles" class="table table-striped">
+				<thread>
+					<tr>
+						<th>
+							Article
+						</th>
+						<th>
+							Actions
+						</th>
+					</tr>
+				</thread>
+				<tbody>
+					{% for article in articles %}
+						<tr>
+							<td>
+								{{ article }}
+							</td>
+							<td>
+								<a href="#" class="btn btn-primary">
+									Details
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<p>
+				aucun articles
+			</p>
+		{% endif %}
+	</div>
 {% endblock %}
